@@ -1,6 +1,6 @@
-# modified version
+# Modified version
 
-this version can be used for in-place calibration of the imu.
+This version can be used for in-place calibration of the imu, without detaching your sensor from your robot.
 
 # Prerequisites
 

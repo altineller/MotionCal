@@ -185,13 +185,23 @@ wxArrayString serial_port_list()
 			close(fd);
 			continue;
 		}
+
+		// CA
+		// -- OMIT --
 		// does it respond to reading the control signals?  If it's
 		// some sort of non-serial terminal (eg, pseudo terminals)
 		// this is where we will detect it's not really a serial port
+
+		// CA
+		// we are ok with pseudo terminals since we are using socat for calibration
+		// so the below statement is commented out.
+
+		/*
 		if (ioctl(fd, TIOCMGET, &bits) < 0) {
 			close(fd);
 			continue;
 		}
+		*/
 		// it passed all the tests, it's a serial port, or some sort
 		// of "terminal" that looks exactly like a real serial port!
 		close(fd);

@@ -66,7 +66,7 @@ IMGS = checkgreen.png checkempty.png checkemptygray.png
 all: $(ALL)
 
 MotionCal: gui.o portlist.o images.o $(OBJS)
-	$(CXX) $(SFLAG) $(CFLAGS) $(LDFLAGS) -o $@ $^ `$(WXCONFIG) --libs all,opengl`
+	$(CXX) $(SFLAG) $(CFLAGS) $(LDFLAGS) -o $@ $^ `$(WXCONFIG) --libs all,opengl` -lGL -lGLU
 
 MotionCal.exe: resource.o gui.o portlist.o images.o $(OBJS)
 	$(CXX) $(SFLAG) $(CFLAGS) $(LDFLAGS) -o $@ $^ `$(WXCONFIG) --libs all,opengl`
